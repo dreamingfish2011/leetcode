@@ -24,7 +24,7 @@ class Solution(object):
 
 if __name__ == "__main__":
     test = Solution()
-    list1 = [2,4,8]
+    list1 = [2,4,3]
     curr1 = head1 = ListNode(0)
     for num in list1 :
         curr1.next = ListNode(num)

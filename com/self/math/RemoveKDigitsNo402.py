@@ -1,4 +1,3 @@
-######find next palindrome number after current palindrome number
 ####删除K个数字
 class Solution:
     def removeKdigits(self, num, k):
