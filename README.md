@@ -15,6 +15,8 @@ leetcode problems solved mark
 559
 # dynamicProcess
 32
+62
+63
 135
 982
 # greedy
@@ -25,6 +27,7 @@ leetcode problems solved mark
 149
 204
 402
+509
 #string
 5
 871
