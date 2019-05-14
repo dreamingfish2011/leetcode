@@ -4,6 +4,8 @@ class Solution:
         :type s: str
         :rtype: str
         """
+        #-------------------------------
+        #\         \             \
         #预处理
         s='#'+'#'.join(s)+'#'
 
