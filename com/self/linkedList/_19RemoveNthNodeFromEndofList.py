@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = None
 ##快慢指针，快指针比慢指针快N+1个节点
+#链表头部加一个节点为了避免，删除倒数第M个情况出错。M表示链表长度
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         start = ListNode(0)
