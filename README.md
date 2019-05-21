@@ -32,18 +32,20 @@ leetcode problems solved mark
 757
 # math
 7
+29
 50
 149
 204
 402
 509
-#string
+# string
 3
 5
 8
 20
+30 hard
 871
 1015
 1023
-matrix
+# matrix
 498

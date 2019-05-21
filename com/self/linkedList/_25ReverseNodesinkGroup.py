@@ -32,7 +32,7 @@ if __name__ == '__main__':
     node2.next = node3
     node3.next = node4
     node4.next = node5
-    head = t.reverseKGroup(node1,2)
+    head = t.reverseKGroup(node1,3)
     while head:
         print(head.val)
         head = head.next
