@@ -18,7 +18,7 @@ class Solution:
     def permute1(self, nums):
         return [[n] + p
                 for i, n in enumerate(nums)
-                for p in self.permute(nums[:i] + nums[i + 1:])] or [[]]
+                for p in self.permute1(nums[:i] + nums[i + 1:])] or [[]]
 
     # Runtime: 60 ms, faster than 23.24% of Python3 online submissions for Permutations.
     # Memory Usage: 12.8 MB, less than 88.04% of Python3 online submissions for Permutations.
