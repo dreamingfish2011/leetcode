@@ -14,4 +14,4 @@ class Solution:
 
 if __name__ == "__main__":
     test = Solution()
-    print(test.myAtoi("4193 with words"))
+    print(test.myAtoi(" 87664 dd 23"))

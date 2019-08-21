@@ -13,7 +13,19 @@ class Solution:
             x = int(x/10)
         return y == reverse
 
+    def isPalindromeUseStr(self, x: int) -> bool:
+        s= str(x)
+        i ,j= 0,len(s)-1
+        while i <= j:
+            if s[i] == s[j]:
+                i +=1
+                j-=1
+            else:
+                return False
+        return True
+
 
 if __name__ == "__main__":
     test = Solution()
     print(test.isPalindrome(15551))
+    print(test.isPalindromeUseStr(15551))
