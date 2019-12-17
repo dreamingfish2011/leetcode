@@ -17,18 +17,35 @@ class Solution:
             return dp[1]
         for i in range(2, n + 1):
             result = []
-            for cut in range(0, i):
-                for pre in dp[i - 1]:
+            for pre in dp[i - 1]:
+                for cut in range(0, i):
                     if cut == 0:
                         result.append(pre + '()')
                     elif set(pre[-cut:]) == set(')'):
                         currstr = pre[0:-cut] + '(' + ')' * (cut+1)
                         result.append(currstr)
+                    else:
+                        break
             dp[i] = result
             del dp[i - 1]
         return dp[n]
 
+    def generateParenthesisByBacktrack(self, n: int) :
+        ans = []
+        def backtrack(S = '', left = 0, right = 0):
+            if len(S) == 2 * n:
+                ans.append(S)
+                return
+            if left < n:
+                backtrack(S+'(', left+1, right)
+            if right < left:
+                backtrack(S+')', left, right+1)
+
+        backtrack()
+        return ans
+
 
 if __name__ == '__main__':
     t = Solution();
-    print(t.generateParenthesisByTrack(50))
+    print(len(t.generateParenthesisByTrack(7)))
+    print(t.generateParenthesisByBacktrack(7))

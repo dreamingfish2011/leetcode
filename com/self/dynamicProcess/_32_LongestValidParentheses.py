@@ -11,7 +11,7 @@ class Solution:
                 if s[i - 1] == '(':
                     add = dp[i - 2] if i > 2 else 0
                     dp[i] = add + 2
-                #当找到右括号时，如果前面一个不是（即是），此时需要考虑s[i - dp[i - 1] - 1]韦仕是不是左括号，
+                #当找到右括号时，如果前面一个不是（即是），此时需要考虑s[i - dp[i - 1] - 1]位置是不是左括号，
                 # 如果是，那么就能把dp[i - dp[i - 1] - 2]和dp[i-1]长度接起来了，即dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2
                 elif i - dp[i - 1] > 0 and s[i - dp[i - 1] - 1] == '(':
                     add = dp[i - dp[i - 1] - 2] if i - dp[i - 1] >= 2 else 0

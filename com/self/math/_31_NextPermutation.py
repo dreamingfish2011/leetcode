@@ -1,29 +1,26 @@
 class Solution:
     def nextPermutation(self, nums) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        n = len(nums)
-        k = -1
-        l = 0
-        for k in range(n - 2, -1, -1):
-            if nums[k] < nums[k + 1]:
-                break
-        if k <= 0:
-            nums = nums[::-1]
-            # nums.sort()
-        else:
-            for l in range(n - 1, k, -1):
-                if nums[l] > nums[k]:
-                    break
-            nums[k], nums[l] = nums[l], nums[k]
-            nums[k + 1:n] = nums[k + 1:n][::-1]
-        print(nums)
+        i = len(nums) - 2
+        while i >= 0 and nums[i + 1] <= nums[i]:
+            i -= 1
+        if i >= 0:
+            j = len(nums) - 1
+            while j >= 0 and nums[j] <= nums[i]:
+                j -= 1
+            self.swap(nums, i, j)
+        nums[i+1:] = nums[i+1:][::-1]
+        # self.reverse(nums, i + 1)
+
+    def swap(self, nums, i, j):
+        temp_i = nums[i]
+        temp_j = nums[j]
+        nums[i] = temp_j
+        nums[j] = temp_i
 
 
 if __name__ == '__main__':
     t = Solution();
-    nums = [1, 2]
+    nums = [1, 3, 2]
     t.nextPermutation(nums)
     # nums = nums[::-1]
-    # print(nums)
+    print(nums)

@@ -20,4 +20,4 @@ class Solution:
 
 if __name__ == '__main__':
     t = Solution();
-    print(t.divide(-2147483648, 2))
+    print(t.divide(10, 3))

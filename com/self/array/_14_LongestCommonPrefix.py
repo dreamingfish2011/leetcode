@@ -1,4 +1,23 @@
 class Solution:
+    ##分治法，递归
+    def longestCommonPrefixRecursion(self, strs) -> str:
+        if len(strs) == 0:
+            return ""
+        if len(strs) == 1:
+            return strs[0]
+        if len(strs) == 2:
+            i = 0
+            while i < len(strs[0]) and i < len(strs[1]) and strs[0][i] == strs[1][i]:
+                i += 1
+            if i == 0:
+                return ""
+            else:
+                return strs[0][0:i]
+        else:
+            i = int(len(strs) / 2)
+            new_strs = [self.longestCommonPrefixRecursion(strs[0:i]), self.longestCommonPrefixRecursion(strs[i:])]
+            return self.longestCommonPrefixRecursion(new_strs)
+
     ##compare parallel  平行比较
     # 97.34 %  12.9M
     def longestCommonPrefix(self, strs) -> str:
@@ -48,5 +67,6 @@ class Solution:
 
 if __name__ == "__main__":
     test = Solution()
-    strs = ["dog", "racecar", "car"]
+    strs = ["flower", "flow", "flight"]
     print("ouput str=", test.longestCommonPrefix(strs))
+    print("ouput str=", test.longestCommonPrefixRecursion(strs))

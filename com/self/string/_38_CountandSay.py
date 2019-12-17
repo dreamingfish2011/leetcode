@@ -32,4 +32,4 @@ class Solution:
 
 if __name__ == '__main__':
     t = Solution()
-    print(t.countAndSay(10))
+    print(t.countAndSay(6))
